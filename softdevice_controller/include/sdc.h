@@ -77,7 +77,7 @@ extern "C" {
  */
 
 /** @brief Maximum number of bytes required per advertiser. */
-#define SDC_MEM_DEFAULT_ADV_SIZE 840
+#define SDC_MEM_DEFAULT_ADV_SIZE 848
 
 /** @brief Maximum number of bytes required per master link for the default buffer configuration. */
 #define SDC_MEM_DEFAULT_MASTER_LINK_SIZE 830
