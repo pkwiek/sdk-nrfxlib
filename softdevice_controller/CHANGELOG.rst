@@ -29,10 +29,6 @@ Added
 
     * ``LE CS Set Default Security Requirements``
     * ``LE CS Set Security Requirements``
-* :c:func:`sdc_support_mpsl_fem` and :c:func:`sdc_support_mpsl_coex`
-  The application must now call these APIs to enable FEM or coex integration.
-  This allows applications to reduce the NVM usage of SDC when these features are not required.
-  Applications implementing MPSL coexistence without enabling :kconfig:option:`CONFIG_MPSL_CX` will now need to enable :kconfig:option:`CONFIG_BT_CTLR_SDC_MPSL_COEX`. (DRGN-29256)
 
 Changes
 =======
@@ -59,6 +55,8 @@ Bug fixes
   The peripheral could apply the new latency before the central had received the peripheral's acknowledgment, causing the peripheral to skip connection events and exceed the supervision timeout. (DRGN-29270)
 * Fixed an issue where the controller would not use a random delay for undirected advertisements when a high duty cycle advertiser had previously been started on the same advertising set. (DRGN-29306)
 * Fixed an issue where the controller could have a higher than expected packet loss rate as a BIS synchronized receiver in noisy environments. (DRGN-29320)
+* Fixed an issue where the controller, acting as a CS Reflector, would shift the CS tone phase incorrectly during the last T_PM slot in a Mode-2 step when the IPT feature was used with multiple antenna paths. (DRGN-29459)
+* Fixed an issue where the controller could assert while running DTM RX tests on very noisy links. (DRGN-29228)
 
 nRF Connect SDK v3.4.0
 **********************
